@@ -1,5 +1,5 @@
 import { ethers } from "ethers"
-import config from "./config"
+import config from "../cli/inscription/config"
 
 const provider = new ethers.JsonRpcProvider(config.URL)
 const signer = new ethers.Wallet(config.PrivateKey, provider)

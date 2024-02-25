@@ -1,5 +1,5 @@
 import config from "./config"
-import { sendOneRound } from "./txProcessor"
+import { sendOneRound } from "../../core/txProcessor"
 
 async function main() {
     console.log("=== start ===")
