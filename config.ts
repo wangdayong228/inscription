@@ -4,6 +4,7 @@ program
     .requiredOption('-k, --privateKey <string>', 'Private key')
     .requiredOption('-d, --data <string>', 'Data')
     .option('-c, --count <number>', 'Count', "1000")
+    .option('-b, --batch', 'Send on batch (default send one by one)')
     .option('-v, --verbose', 'Verbose');
 
 program.parse(process.argv);
@@ -31,6 +32,7 @@ export default {
     PrivateKey: options.privateKey,
     Count: options.count,
     Data: options.data,
+    IsSendOnBatch: options.batch,
     Verbose: options.verbose,
     MaxGasprice: 500000e9
 }

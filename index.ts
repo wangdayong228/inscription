@@ -6,7 +6,13 @@ async function main() {
     const oneRoundCount = 10
     const round = Math.ceil(config.Count / 10)
     for (let i = 0; i < round; i++) {
-        await sendOneRound(oneRoundCount)
+        try {
+            await sendOneRound(oneRoundCount)
+        } catch (err) {
+            console.warn(`=== send round ${i} error: ${err}`)
+            i--
+            continue
+        }
         console.log(`=== round ${i} done ===`)
     }
     console.log("=== end ===")
